@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="grossetapp.MainPage"
+             x:Name="MainGrosseto"
+             Title="Città di Grosseto">
+
+    <ScrollView BackgroundColor="#f0f0f0">
+        <VerticalStackLayout
+            Padding="30,0"
+            Spacing="25">
+            <Image
+                Source="Grosseto-Citta-Stemma.png"
+                HeightRequest="185"
+                Aspect="AspectFit"
+                SemanticProperties.Description="dot net bot in a race car number eight"></Image>
+            <StackLayout Padding="20" BackgroundColor="#ffffff">
+                <CollectionView ItemsSource="{Binding CittaDiGrosseto}"  x:Name="CittaCollectionView"  >
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <StackLayout BackgroundColor="#e6f7ff" Padding="15">
+                                <Label Text="Sindaco:" TextColor="#333333"></Label>
+                                <Label Text="{Binding Sindaco}" FontSize="Large" FontAttributes="Bold" TextColor="#0056b3" />
+                                <Label Text="Numero di Abitanti:" TextColor="#333333"></Label>
+                                <Label Text="{Binding Abitanti}" FontSize="Large" FontAttributes="Bold" TextColor="#0056b3" />
+                            </StackLayout>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+            </StackLayout>
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
